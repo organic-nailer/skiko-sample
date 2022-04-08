@@ -1,3 +1,3 @@
 
-rootProject.name = "skija-sample"
+rootProject.name = "skiko-sample"
 

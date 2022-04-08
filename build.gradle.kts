@@ -1,24 +1,25 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.6.10"
 }
 
 group = "dev.fastriver"
 version = "1.0-SNAPSHOT"
-val skArtifact = "skija-windows"
-val skVersion = "0.92.20"
+val skArtifact = "skiko-awt-runtime-windows-x64"
+val skVersion = "0.7.18"
 val lwjglVersion = "3.2.3"
 val lwjglNatives = "natives-windows"
 
 repositories {
     mavenCentral()
-    maven (url = "https://packages.jetbrains.team/maven/p/skija/maven")
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 dependencies {
     testImplementation(kotlin("test"))
-    api("org.jetbrains.skija:${skArtifact}:${skVersion}")
+    api("org.jetbrains.skiko:${skArtifact}:${skVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
     implementation("org.lwjgl:lwjgl:$lwjglVersion")
     implementation("org.lwjgl:lwjgl-glfw:$lwjglVersion")
